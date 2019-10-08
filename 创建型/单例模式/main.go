@@ -1,4 +1,4 @@
-package main模式
+package main
 
 import (
 	"fmt"
