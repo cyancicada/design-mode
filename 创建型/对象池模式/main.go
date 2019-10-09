@@ -11,7 +11,7 @@ import (
 func main() {
 	p := pool.NewPool(5)
 	wait := sync.WaitGroup{}
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 7; i++ {
 		index := i
 		wait.Add(1)
 		go func(pool pool.Pool, ind int) {
