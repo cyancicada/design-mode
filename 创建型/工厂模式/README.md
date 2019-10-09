@@ -6,6 +6,7 @@
 /***
  *	Simple Factory
  */
+package main
 type FoodFactory struct {
 }
 
@@ -60,6 +61,7 @@ func main(){
 &emsp;&emsp;工厂方法将产品的创建逻辑写在子类之中,代码如下<br>
 
 ```go
+package main
 /***
  *	Factory Method
  */
@@ -131,6 +133,8 @@ func main(){
 &emsp;&emsp;这样以来，来到店里的客人，只需要订购套餐，服务员通知工厂生产并送达即可。假设一个客人要套餐A，服务员通知工厂A，先生产一个肉，再来一杯CoCo，服务员负责把这些产品递给客人食用即可。<br>
 
 ```go
+
+package main
 /***
  *	Abstract Factory
  */
