@@ -13,9 +13,24 @@ var (
 	instance *singleton //	被确保唯一的对象
 )
 
+// 懒汉
 func GetInstance() *singleton {
 	once.Do(func() {
 		instance = new(singleton)
+	})
+	return instance
+}
+
+// 饿汉
+
+func init() {
+	instance = GetInstance2()
+}
+func GetInstance2() *singleton {
+	once.Do(func() {
+		if instance == nil {
+			instance = new(singleton)
+		}
 	})
 	return instance
 }
