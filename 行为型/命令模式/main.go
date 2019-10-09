@@ -1,19 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"time"
-
-	"design-mode/行为型/命令模式/command"
-)
+import "design-mode/行为型/命令模式/command"
 
 func main() {
-	sys := command.NewEventSystem()
+	abcStock := command.NewStock()
 
-	sys.Map(command.EVENT_CODE_KEY, func(data command.Event) {
-		fmt.Println(data)
-	})
+	buyStockOrder := new(command.BuyStock)
+	buyStockOrder.BuyStock(abcStock)
 
-	sys.InspectKeyboard()
-	time.Sleep(time.Second * 100)
+	sellStockOrder := new(command.SellStock)
+	sellStockOrder.SellStock(abcStock)
+
+	broker := new(command.Broker)
+	broker.TakeOrder(buyStockOrder)
+	broker.TakeOrder(sellStockOrder)
+
+	broker.PlaceOrders()
 }
